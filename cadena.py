@@ -32,19 +32,8 @@ print(len(txt1))
 # comprobar cadenas
 print("simple" in txt)
 
-### ejercio 
-## 1. valide si las palabras simplemente,estándar,estandar,(.)," ",(,) # existen
 
 
-
-## 2. valide si las palabras juan,archivos,estan,hola,tex," ",(,) # No existen
-# 3. recorrer en for txt y validar si el caracter i existe y la cantidad
-# 4. recorrer en for txt y validar si el caracter " " existe y la cantidad
-# 5. recorrer en for txt y validar si el caracter , existe y la cantidad
-# 6. recorrer en for txt y validar si el caracter Lorem no existe y la cantidad en caso de que exista 0
-# 7. recorrer en for txt y validar si el caracter hola no existe y la cantidad en caso de que exista 0
-
-## cortar cadenas 
 txt = """
  es simplemente el texto de relleno de las imprentas y 
  archivos de texto. Lorem Ipsum ha sido el texto de relleno 
@@ -103,9 +92,36 @@ if contar_lorem == 0:
 else:
     print(f'La palabra "Lorem" aparece {contar_lorem} veces en el texto.')
 
+# 6.1 jaja otra manera de acerlo con for y len
+palabra_buscada = "Lorem"
+contar_lorems = 0
+
+for i in range(len(txt) - len(palabra_buscada) + 1):
+    if txt[i:i+len(palabra_buscada)] == palabra_buscada:
+        contar_lorems += 1
+
+if contar_lorems == 0:
+    print('El texto no contiene la palabra "Lorem".')
+else:
+    print(f'La palabra "Lorem" aparece {contar_lorems} veces en el texto.')
+
 # 7. Recorrer el texto y validar si el caracter "hola" no existe y la cantidad en caso de que exista es 0
 contar_hola = txt.count("hola")
 if contar_hola == 0:
     print('El texto no contiene la palabra "hola".')
 else:
     print(f'La palabra "hola" aparece {contar_hola} veces en el texto.')
+
+palabra_buscada = "Lorem"
+
+## cortar cadenas 
+print(txt[:100])## no incluye el 100 -> 0,99
+print("-----------------------------------------")
+print(txt[100:])## no incluye el 100 -> 0,99
+
+## negativa
+b="hola, mundo!"
+print(b[-5:-2])
+
+## realizar un ejercicio basico con el random() y vamos a cortar el numero del 1:3, inicio:6 y del
+
