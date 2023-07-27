@@ -54,4 +54,3 @@ print(registroUsuario)
 contador=i=j=0
 print(contador,i,j) 
 
-hola 
