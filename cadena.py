@@ -123,5 +123,17 @@ print(txt[100:])## no incluye el 100 -> 0,99
 b="hola, mundo!"
 print(b[-5:-2])
 
-## realizar un ejercicio basico con el random() y vamos a cortar el numero del 1:3, inicio:6 y del
+## realizar un ejercicio basico con el random() float y vamos a cortar el numero del 1:3, inicio:6 
+## cadena sacar la longitud, inicio hasta longitud
+##metodos mas usados
+###Upper case
+## Lower case
+## replace
+# split
+# count el de yo
+# find
+#format
+# index
+# join
+# translate
 
