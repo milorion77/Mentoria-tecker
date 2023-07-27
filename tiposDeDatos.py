@@ -29,6 +29,7 @@ print(type(decimal))
 # ningun  tipo Nonetype
 #typo de dato complex es un tipo de dato que nos da una parte imaginaria "numeros complejos"
 # los numeros complejos se escriben con una "j" como parte imaginaria
+<<<<<<< HEAD
 
 z=-5j
 print(z)
@@ -43,3 +44,5 @@ print(random.randint(1,100))
 print(random.getstate())
 # random()
 print(random.random())
+=======
+>>>>>>> ca92e99f2d475a6568cd49238f574d8db01bdea8
