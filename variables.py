@@ -52,4 +52,6 @@ print(registroUsuario)
 
 ##un solo valor a multiples Variables
 contador=i=j=0
-print(contador,i,j)
+print(contador,i,j) 
+
+hola 
