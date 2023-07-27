@@ -44,5 +44,3 @@ print(random.randint(1,100))
 print(random.getstate())
 # random()
 print(random.random())
-=======
->>>>>>> ca92e99f2d475a6568cd49238f574d8db01bdea8
