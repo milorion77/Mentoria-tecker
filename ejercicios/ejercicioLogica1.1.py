@@ -25,6 +25,8 @@ def pruebaBeneficiario():
         print(genero)
 
         edad = int(input("Ingrese la edad: "))
+        if edad != print("No se pueden ingresar letras"):
+            edad = False
         estrato = int(input("Ingrese el estrato (1 o 2): "))
 
         personas.append({'genero': genero, 'edad': edad, 'estrato': estrato})
