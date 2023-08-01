@@ -55,3 +55,22 @@ print("pepito" not in mixta)
 # 2 tuple : es una coleccion ordenada inmutable , permite miembros duplicados 
 # 3 conjunto : es una coleccion desordenada, inmutable y no indexada
 # 4 diccionario: es una coleccion ordenada y modificable no hay miembros duplicados 
+
+## append()
+# añadir un elemento al final de la lista
+lista1=[]
+mixta1=["hola","jkajhs", "lkjl"]
+mixta.append(mixta1)
+print(mixta)
+
+cantidad=int(input("ingrese cantidad de registros a almacenar"))
+while cantidad>0:
+    nombre=input("Ingrese nombre")
+    apellido=input("ingrese apellido")
+    edad=int(input("ingrese edad"))
+    genero=input("ingrese genero")
+
+    lista=[nombre,apellido,edad,genero]
+    lista1.append(lista)
+    cantidad-=1
+    print(lista1)

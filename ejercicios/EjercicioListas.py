@@ -58,11 +58,11 @@ print(f"En la lista booleanos, la cantidad de True es: {contarTrue} y de False e
 # validar si el numero de telefono =  12552241  esta presente o no 
 mixta = ["pepito", "perez", 25, "veeronfrng", 12552241, True]
 
-nombre_apellido = mixta[:2]  # Obtenemos los dos primeros elementos (nombre y apellido) de la lista
+nombre_apellido = mixta[:2]  # Obtenemos los dos primeros elementos que son el nombre y el apellido de la lista
 
-# Verificamos si el nombre y apellido son iguales
+
 for persona in mixta:
-    if persona in nombre_apellido and nombre_apellido[0] == nombre_apellido[1]:
+    if persona in nombre_apellido and nombre_apellido[0] == nombre_apellido[1]: # Verificamos nombre y apellido son iguales
         print("La persona se encontró.")
         break
 else:
@@ -85,3 +85,5 @@ for persona in mixta:
         break
 else:
     print("El número de teléfono no está presente.")
+
+## NOTA:  Es de malas practicas solucionar problemas de codigo con pocicionamiento
