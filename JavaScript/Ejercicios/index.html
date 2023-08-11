@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcular Precio</title>
+</head>
+<body>
+    <p>/*Ejercicio 8<br>
+        Define un objeto, mediante una expresión, que tenga dos propiedades: precio y descuento y un método neto. <br>
+        El método calculará el precio con el descuento aplicado. Los valores se pedirán por teclado<br>
+        Por ejemplo objeto vestido, precio 400 y descuento 10. El método devolverá como resultado 360 (400 - 10*400/100). */
+        </p>
+  <label for="precio">Precio del producto:</label>
+  <input type="number" id="precio" required><br><br>
+    
+  <label for="descuento">Descuento (%):</label>
+  <input type="number" id="descuento" required><br><br>
+    
+  <button onclick="calcularPrecio()">Calcular Precio Neto</button>
+
+  <p id="resultado"></p>
+
+  <p>/*Ejercicio 10 <br>
+    Realiza un ejercicio en js que pida una cadena de texto y la muestre poniendo el signo – entre <br> cada carácter sin usar el método replace. */</p>
+  <label for="cadenaInput">Ingrese una cadena de texto:</label>
+  <input type="text" id="cadenaInput">
+  <button onclick="mostrarCadenaConGuiones()">Mostrar con guiones</button>
+
+  <p id="resultadoTexto"></p>
+
+  <p> Ejercicio 11 <br>
+    Pedimos una cadena de texto que sabemos que puede contener paréntesis. <br>
+    Realiza un script que extraiga la cadena que se encuentra entre los paréntesis.<br>
+    Ej: Si escribimoe el texto “Hola (que) tal” se mostrará “que”. <br>
+    Si no existe el signo “(“ mostrará una cadena vacía y si existe el signo “(“pero no el signo “)” <br>
+    mostrará desde el primer paréntesis hasta el final.</p>
+  <label for="cadenaInput2">Ingrese una cadena de texto que contenga paréntesis:</label>
+  <input type="text" id="cadenaInput2">
+  <button onclick="extraerCadena()">Extraer Cadena</button>
+
+  <p id="resultado2"></p>
+
+  <label for="cadenaInput3">Ingrese una cadena de texto:</label>
+  <input type="text" id="cadenaInput3">
+  <button onclick="mostrarCadenaAlReves()">Mostrar al Revés</button>
+
+  <p id="resultado3"></p>
+
+
+    <p>Ejercicio 13<br>
+        Realiza un script que pida un texto e indique si es un palíndromo.<br>
+        Ejemplo de palíndromo: “Dabale arroz a la zorra el abad”.<br>
+        Palíndromo, 1. m. Palabra o frase que se lee igual de izquierda a derecha,<br>
+         que de derecha a izquierda; p. ej., anilina; dábale arroz a la zorra el abad.</p>
+  <label for="textoInput4">Ingrese un texto:</label>
+  <input type="text" id="textoInput4">
+  <button onclick="verificarPalindromo()">Verificar Palíndromo</button>
+
+  <p id="resultado4"></p>
+
+  <script>
+    function calcularPrecio() {
+      var precio = parseFloat(document.getElementById('precio').value);
+      var descuento = parseFloat(document.getElementById('descuento').value);
+
+      var precioNeto = precio - (descuento * precio / 100);
+      
+      document.getElementById('resultado').textContent = "El precio neto del producto es: " + precioNeto;
+    }
+
+    function mostrarCadenaConGuiones() {
+      var cadena = document.getElementById('cadenaInput').value;
+      var cadenaConGuiones = "";
+
+      for (var i = 0; i < cadena.length; i++) {
+        cadenaConGuiones += cadena[i];
+        if (i !== cadena.length - 1) {
+          cadenaConGuiones += "-";
+        }
+      }
+
+      document.getElementById('resultadoTexto').textContent = "Cadena con guiones: " + cadenaConGuiones;
+    }
+
+
+    function extraerCadena() {
+      var cadena = document.getElementById('cadenaInput2').value;
+      var indiceInicio = cadena.indexOf('(');
+      var indiceFin = cadena.indexOf(')');
+      var cadenaExtraida = "";
+
+      if (indiceInicio !== -1 && indiceFin !== -1) {
+        cadenaExtraida = cadena.substring(indiceInicio + 1, indiceFin);
+      } else if (indiceInicio !== -1) {
+        cadenaExtraida = cadena.substring(indiceInicio + 1);
+      }
+
+      document.getElementById('resultado2').textContent = "Cadena extraída: " + cadenaExtraida;
+    }
+
+    function mostrarCadenaAlReves() {
+      var cadena = document.getElementById('cadenaInput3').value;
+      var cadenaAlReves = "";
+
+      for (var i = cadena.length - 1; i >= 0; i--) {
+        cadenaAlReves += cadena[i];
+      }
+
+      document.getElementById('resultado3').textContent = "Cadena al revés: " + cadenaAlReves;
+    }
+
+    function verificarPalindromo() {
+      var texto = document.getElementById('textoInput4').value.toLowerCase().replace(/\s+/g, '');
+      var textoReverso = "";
+
+      for (var i = texto.length - 1; i >= 0; i--) {
+        textoReverso += texto[i];
+      }
+
+      if (texto === textoReverso) {
+        document.getElementById('resultado4').textContent = "Es un palíndromo.";
+      } else {
+        document.getElementById('resultado4').textContent = "No es un palíndromo.";
+      }
+    }
+  </script>
+</body>
+</html>
