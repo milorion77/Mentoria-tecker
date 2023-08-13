@@ -5,25 +5,25 @@ Agregarle además un método printDate que imprima por consola la fecha en forma
 
 function mkDate(day, month, year) {
     return {
-      day: day,
-      month: month,
-      year: year,
-      printDate: function() {
-        console.log(`${this.day}/${this.month}/${this.year}`);
-      }
+        day: day,
+        month: month,
+        year: year,
+        printDate: function () {
+            console.log(`${this.day}/${this.month}/${this.year}`);
+        }
     };
-  }
-  
-  const fecha = mkDate(10, 8, 2023);
-  fecha.printDate(); 
+}
+
+const fecha = mkDate(10, 8, 2023);
+fecha.printDate();
 
 console.log("========================================Ejercicio 2 =============================================")
 /* Ejercicio 2
 Modificar el objeto que retorna la función y agregar el método isValid. isValid debe validar que los 
 //tres campos estén seteados y que 1 <= day <= 31, 1 <= month <= 12, 1970 <= year < 3000.
-// printDate deberá imprimir fecha inválida si la fecha no es válida. */  
+// printDate deberá imprimir fecha inválida si la fecha no es válida. */
 function createDate(day, month, year) {
-function printDate() {
+    function printDate() {
         if (isValid()) {
             console.log(`Fecha: ${day}/${month}/${year}`);
         } else {
@@ -169,14 +169,14 @@ var alumno = {
     ingles: 9,
     programacion: 8,
     HTML: 7
-  };
-  
-  var totalCalificaciones = alumno.ingles + alumno.programacion + alumno.HTML;
-  var notaMedia = totalCalificaciones / 3;
-  
-  console.log("Nombre del alumno:", alumno.nombre);
-  console.log("Nota media de", alumno.nombre + ":", notaMedia);
-  
+};
+
+var totalCalificaciones = alumno.ingles + alumno.programacion + alumno.HTML;
+var notaMedia = totalCalificaciones / 3;
+
+console.log("Nombre del alumno:", alumno.nombre);
+console.log("Nota media de", alumno.nombre + ":", notaMedia);
+
 
 console.log("========================================Ejercicio 8 =============================================")
 console.log("este ejercicio esta en el html")
@@ -197,9 +197,9 @@ console.log("========================================Ejercicio 13 ==============
 Realiza un script que pida un texto e indique si es un palíndromo.
 Ejemplo de palíndromo: “Dabale arroz a la zorra el abad”.
 Palíndromo, 1. m. Palabra o frase que se lee igual de izquierda a derecha,
- que de derecha a izquierda; p. ej., anilina; dábale arroz a la zorra el abad. */
+que de derecha a izquierda; p. ej., anilina; dábale arroz a la zorra el abad. */
 
 
- console.log("========================================Ejercicio 14 =============================================")
+console.log("========================================Ejercicio 14 =============================================")
 /*Ejercicio 14
 Realizar acciones de carrusel con eventos */
