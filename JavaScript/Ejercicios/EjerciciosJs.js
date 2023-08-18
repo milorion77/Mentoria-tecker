@@ -6,6 +6,7 @@ Crear una función mkDate que reciba los parámetros day, month, year y retorne 
 Agregarle además un método printDate que imprima por consola la fecha en formato dia/mes/año. */
 
 function mkDate(day, month, year) {
+<<<<<<< HEAD
   return {
     day: day,
     month: month,
@@ -15,6 +16,20 @@ function mkDate(day, month, year) {
     },
   };
 }
+=======
+    return {
+        day: day,
+        month: month,
+        year: year,
+        printDate: function () {
+            console.log(`${this.day}/${this.month}/${this.year}`);
+        }
+    };
+}
+
+const fecha = mkDate(10, 8, 2023);
+fecha.printDate();
+>>>>>>> ac67a75661083b1253baff5988c6458192d310dc
 
 const fecha = mkDate(10, 8, 2023);
 fecha.printDate();
@@ -27,11 +42,20 @@ Modificar el objeto que retorna la función y agregar el método isValid. isVali
 //tres campos estén seteados y que 1 <= day <= 31, 1 <= month <= 12, 1970 <= year < 3000.
 // printDate deberá imprimir fecha inválida si la fecha no es válida. */
 function createDate(day, month, year) {
+<<<<<<< HEAD
   function printDate() {
     if (isValid()) {
       console.log(`Fecha: ${day}/${month}/${year}`);
     } else {
       console.log("Fecha inválida");
+=======
+    function printDate() {
+        if (isValid()) {
+            console.log(`Fecha: ${day}/${month}/${year}`);
+        } else {
+            console.log("Fecha inválida");
+        }
+>>>>>>> ac67a75661083b1253baff5988c6458192d310dc
     }
   }
 
@@ -195,11 +219,26 @@ la calificación en cada una de ellas. El script imprimirá el nombre y la media
 Por ejemplo, guardar las calificaciones de un alumno de nombre Juan, Inglés: 9, programacion: 8, HTML: 7. Sacará Nota media de Juan 8 */
 
 var alumno = {
+<<<<<<< HEAD
   nombre: "Juan",
   ingles: 9,
   programacion: 8,
   HTML: 7,
 };
+=======
+    nombre: "Juan",
+    ingles: 9,
+    programacion: 8,
+    HTML: 7
+};
+
+var totalCalificaciones = alumno.ingles + alumno.programacion + alumno.HTML;
+var notaMedia = totalCalificaciones / 3;
+
+console.log("Nombre del alumno:", alumno.nombre);
+console.log("Nota media de", alumno.nombre + ":", notaMedia);
+
+>>>>>>> ac67a75661083b1253baff5988c6458192d310dc
 
 var totalCalificaciones = alumno.ingles + alumno.programacion + alumno.HTML;
 var notaMedia = totalCalificaciones / 3;
@@ -230,10 +269,21 @@ console.log(
   "========================================Ejercicio 13 ============================================="
 );
 
+<<<<<<< HEAD
 console.log("este ejercicio esta en el html");
 
 console.log(
   "========================================Ejercicio 14 ============================================="
 );
+=======
+/*Ejercicio 13
+Realiza un script que pida un texto e indique si es un palíndromo.
+Ejemplo de palíndromo: “Dabale arroz a la zorra el abad”.
+Palíndromo, 1. m. Palabra o frase que se lee igual de izquierda a derecha,
+que de derecha a izquierda; p. ej., anilina; dábale arroz a la zorra el abad. */
+
+
+console.log("========================================Ejercicio 14 =============================================")
+>>>>>>> ac67a75661083b1253baff5988c6458192d310dc
 /*Ejercicio 14
 Realizar acciones de carrusel con eventos */
