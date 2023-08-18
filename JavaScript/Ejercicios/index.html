@@ -59,7 +59,34 @@
 
   <p id="resultado4"></p>
 
-  <script>
+  <style>
+    #carousel {
+      width: 300px;
+      overflow: hidden;
+    }
+    #image-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    img {
+      width: 300px;
+      height: auto;
+    }
+  </style>
+</head>
+
+  <p>Ejercicio 14
+  Realizar acciones de carrusel con eventos */ </p>
+<div id="carousel" style="margin: 2%">
+  <div id="image-container">
+    <img src="https://cdn.pixabay.com/photo/2017/02/07/16/47/kingfisher-2046453_1280.jpg">
+    <img src="https://media.istockphoto.com/id/1281822141/es/foto/kingfisher-com%C3%BAn-europeo-con-un-pez.jpg?s=612x612&w=0&k=20&c=GoBz2iw-kLOv8XGYgkhVYq13ggtcfs7uJBaeHSxEwT4=">
+    <img src="https://media.istockphoto.com/id/1278727994/es/foto/pescador-com%C3%BAn.jpg?s=612x612&w=0&k=20&c=WAM1zgtoG48p1GXPRDW1MdhthJW1SVx737bawznqr-I=">
+
+  </div>
+</div>
+</body>
+ <script>
     function calcularPrecio() {
       var precio = parseFloat(document.getElementById('precio').value);
       var descuento = parseFloat(document.getElementById('descuento').value);
@@ -124,6 +151,35 @@
         document.getElementById('resultado4').textContent = "No es un palíndromo.";
       }
     }
+
+    const imageContainer = document.getElementById("image-container");
+  let currentIndex = 0;
+  let isPaused = false;
+
+  function nextImage() {
+    if (!isPaused) {
+      currentIndex = (currentIndex + 1) % imageContainer.children.length;
+      updateCarousel();
+      
+    }
+  }
+
+  function updateCarousel() {
+    const translateValue = -currentIndex * 300; // Ancho de las imágenes
+    imageContainer.style.transform = `translateX(${translateValue}px)`;
+  }
+
+  setInterval(nextImage, 1000); // Cambiar de imagen cada 3 segundos
+
+  imageContainer.addEventListener("mouseover", () => {
+    isPaused = true;
+    
+  });
+
+  imageContainer.addEventListener("mouseout", () => {
+    isPaused = false;
+    console.log("Pausada")
+  });
   </script>
 </body>
 </html>
