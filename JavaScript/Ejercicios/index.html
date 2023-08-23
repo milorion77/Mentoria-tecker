@@ -67,95 +67,99 @@
       width: 300px;
       overflow: hidden;
     }
+
     #image-container {
       display: flex;
       transition: transform 0.5s ease-in-out;
     }
+
     img {
       width: 300px;
       height: auto;
     }
   </style>
-</head>
+  </head>
 
   <p>Ejercicio 14
-  Realizar acciones de carrusel con eventos */ </p>
-<div id="carousel" style="margin: 2%">
-  <div id="image-container">
-    <img src="https://cdn.pixabay.com/photo/2017/02/07/16/47/kingfisher-2046453_1280.jpg">
-    <img src="https://media.istockphoto.com/id/1281822141/es/foto/kingfisher-com%C3%BAn-europeo-con-un-pez.jpg?s=612x612&w=0&k=20&c=GoBz2iw-kLOv8XGYgkhVYq13ggtcfs7uJBaeHSxEwT4=">
-    <img src="https://media.istockphoto.com/id/1278727994/es/foto/pescador-com%C3%BAn.jpg?s=612x612&w=0&k=20&c=WAM1zgtoG48p1GXPRDW1MdhthJW1SVx737bawznqr-I=">
+    Realizar acciones de carrusel con eventos */ </p>
+  <div id="carousel" style="margin: 2%">
+    <div id="image-container">
+      <img src="https://cdn.pixabay.com/photo/2017/02/07/16/47/kingfisher-2046453_1280.jpg">
+      <img
+        src="https://media.istockphoto.com/id/1281822141/es/foto/kingfisher-com%C3%BAn-europeo-con-un-pez.jpg?s=612x612&w=0&k=20&c=GoBz2iw-kLOv8XGYgkhVYq13ggtcfs7uJBaeHSxEwT4=">
+      <img
+        src="https://media.istockphoto.com/id/1278727994/es/foto/pescador-com%C3%BAn.jpg?s=612x612&w=0&k=20&c=WAM1zgtoG48p1GXPRDW1MdhthJW1SVx737bawznqr-I=">
 
+    </div>
   </div>
-</div>
 </body>
- <script>
-    function calcularPrecio() {
-      var precio = parseFloat(document.getElementById('precio').value);
-      var descuento = parseFloat(document.getElementById('descuento').value);
+<script>
+  function calcularPrecio() {
+    var precio = parseFloat(document.getElementById('precio').value);
+    var descuento = parseFloat(document.getElementById('descuento').value);
 
-      var precioNeto = precio - (descuento * precio / 100);
+    var precioNeto = precio - (descuento * precio / 100);
 
-      document.getElementById('resultado').textContent = "El precio neto del producto es: " + precioNeto;
-    }
+    document.getElementById('resultado').textContent = "El precio neto del producto es: " + precioNeto;
+  }
 
-    function mostrarCadenaConGuiones() {
-      var cadena = document.getElementById('cadenaInput').value;
-      var cadenaConGuiones = "";
+  function mostrarCadenaConGuiones() {
+    var cadena = document.getElementById('cadenaInput').value;
+    var cadenaConGuiones = "";
 
-      for (var i = 0; i < cadena.length; i++) {
-        cadenaConGuiones += cadena[i];
-        if (i !== cadena.length - 1) {
-          cadenaConGuiones += "-";
-        }
-      }
-
-      document.getElementById('resultadoTexto').textContent = "Cadena con guiones: " + cadenaConGuiones;
-    }
-
-
-    function extraerCadena() {
-      var cadena = document.getElementById('cadenaInput2').value;
-      var indiceInicio = cadena.indexOf('(');
-      var indiceFin = cadena.indexOf(')');
-      var cadenaExtraida = "";
-
-      if (indiceInicio !== -1 && indiceFin !== -1) {
-        cadenaExtraida = cadena.substring(indiceInicio + 1, indiceFin);
-      } else if (indiceInicio !== -1) {
-        cadenaExtraida = cadena.substring(indiceInicio + 1);
-      }
-
-      document.getElementById('resultado2').textContent = "Cadena extraída: " + cadenaExtraida;
-    }
-
-    function mostrarCadenaAlReves() {
-      var cadena = document.getElementById('cadenaInput3').value;
-      var cadenaAlReves = "";
-
-      for (var i = cadena.length - 1; i >= 0; i--) {
-        cadenaAlReves += cadena[i];
-      }
-
-      document.getElementById('resultado3').textContent = "Cadena al revés: " + cadenaAlReves;
-    }
-
-    function verificarPalindromo() {
-      var texto = document.getElementById('textoInput4').value.toLowerCase().replace(/\s+/g, '');
-      var textoReverso = "";
-
-      for (var i = texto.length - 1; i >= 0; i--) {
-        textoReverso += texto[i];
-      }
-
-      if (texto === textoReverso) {
-        document.getElementById('resultado4').textContent = "Es un palíndromo.";
-      } else {
-        document.getElementById('resultado4').textContent = "No es un palíndromo.";
+    for (var i = 0; i < cadena.length; i++) {
+      cadenaConGuiones += cadena[i];
+      if (i !== cadena.length - 1) {
+        cadenaConGuiones += "-";
       }
     }
 
-    const imageContainer = document.getElementById("image-container");
+    document.getElementById('resultadoTexto').textContent = "Cadena con guiones: " + cadenaConGuiones;
+  }
+
+
+  function extraerCadena() {
+    var cadena = document.getElementById('cadenaInput2').value;
+    var indiceInicio = cadena.indexOf('(');
+    var indiceFin = cadena.indexOf(')');
+    var cadenaExtraida = "";
+
+    if (indiceInicio !== -1 && indiceFin !== -1) {
+      cadenaExtraida = cadena.substring(indiceInicio + 1, indiceFin);
+    } else if (indiceInicio !== -1) {
+      cadenaExtraida = cadena.substring(indiceInicio + 1);
+    }
+
+    document.getElementById('resultado2').textContent = "Cadena extraída: " + cadenaExtraida;
+  }
+
+  function mostrarCadenaAlReves() {
+    var cadena = document.getElementById('cadenaInput3').value;
+    var cadenaAlReves = "";
+
+    for (var i = cadena.length - 1; i >= 0; i--) {
+      cadenaAlReves += cadena[i];
+    }
+
+    document.getElementById('resultado3').textContent = "Cadena al revés: " + cadenaAlReves;
+  }
+
+  function verificarPalindromo() {
+    var texto = document.getElementById('textoInput4').value.toLowerCase().replace(/\s+/g, '');
+    var textoReverso = "";
+
+    for (var i = texto.length - 1; i >= 0; i--) {
+      textoReverso += texto[i];
+    }
+
+    if (texto === textoReverso) {
+      document.getElementById('resultado4').textContent = "Es un palíndromo.";
+    } else {
+      document.getElementById('resultado4').textContent = "No es un palíndromo.";
+    }
+  }
+
+  const imageContainer = document.getElementById("image-container");
   let currentIndex = 0;
   let isPaused = false;
 
@@ -163,7 +167,7 @@
     if (!isPaused) {
       currentIndex = (currentIndex + 1) % imageContainer.children.length;
       updateCarousel();
-      
+
     }
   }
 
@@ -176,14 +180,14 @@
 
   imageContainer.addEventListener("mouseover", () => {
     isPaused = true;
-    
+
   });
 
   imageContainer.addEventListener("mouseout", () => {
     isPaused = false;
     console.log("Pausada")
   });
-  </script>
+</script>
 </body>
 
 </html>
