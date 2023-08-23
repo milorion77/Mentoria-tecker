@@ -77,3 +77,5 @@ def catalogar(vehiculos, ruedas=None):
 catalogar(vehiculos)
 catalogar(vehiculos, ruedas=2)
 catalogar(vehiculos, ruedas=4)
+
+#mi patroncito
