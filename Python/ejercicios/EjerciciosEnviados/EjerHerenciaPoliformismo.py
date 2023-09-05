@@ -66,44 +66,68 @@ class Ambulancia(Vehiculo):
         print(f"Esta ambulancia está equipada con: {self.equipo_medico}")
 
 
+class Bicicleta(Vehiculo):
+    def __init__(self, puertas, ruedas, color, tipo_combustible):
+        super().__init__(puertas, ruedas, color, tipo_combustible)
+
+    # Metodo mostrar informacion heredado de vehiculo
+    def mostrar_informacion(self):
+        super().mostrar_informacion()
+        print(f"Esta bici tiene: {self.ruedas} ruedas")
+
+
 class Motoneta(Vehiculo):
     def __init__(self, puertas, ruedas, color, tipo_combustible):
         super().__init__(puertas, ruedas, color, tipo_combustible)
-    
-    #Metodo mostrar informacion heredado de vehiculo
+
+    # Metodo mostrar informacion heredado de vehiculo
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f"Esta moto tiene: {self.ruedas} ruedas")
 
 
-# Crear objetos de las clases hijas  o instanciando las clases hijas 
+# Crear objetos de las clases hijas  o instanciando las clases hijas
 mi_auto = Auto(4, 4, "Verde", "Gasolina", True, True, False)
 mi_camioneta = Camioneta(4, 4, "Rojo", "Gasolina", 1000)
 mi_ambulancia = Ambulancia(4, 4, "Blanco", "Diésel", ["Desfibrilador", "Botiquín"])
-mi_motoneta = Motoneta(0,2,"Azul","corriente")
+mi_motoneta = Motoneta(0, 2, "Azul", "corriente")
+mi_bicicleta = Bicicleta(0, 2, "Rosada", "Los pies jaja")
 
 # Crear una lista de vehículos para mostrar el poliformismo
-vehiculos = [mi_auto, mi_motoneta, mi_camioneta, mi_ambulancia]  # Creo una lista llamada vehiculos para mostrar que las subclases se pueden agrupas asi no sean el mismo objeto
-
+vehiculos = [
+    mi_auto,
+    mi_motoneta,
+    mi_bicicleta,
+    mi_camioneta,
+    mi_ambulancia,
+]  # Creo una lista llamada vehiculos para mostrar que las subclases se pueden agrupas asi no sean el mismo objeto
 
 
 def catalogar(vehiculos, ruedas=0):
     if ruedas != 0:
-        filtrar_vehiculos = [vehiculo for vehiculo in vehiculos if vehiculo.ruedas == ruedas]
-         #lee como: 
-         # "para cada vehiculo en la lista vehiculos, toma ese vehiculo y agrégalo a la nueva lista filtrar_vehiculos si cumple con la condición especificada".
+        filtrar_vehiculos = [
+            vehiculo for vehiculo in vehiculos if vehiculo.ruedas == ruedas
+        ]
+        # lee como:
+        # "para cada vehiculo en la lista vehiculos, toma ese vehiculo y agrégalo a la nueva lista filtrar_vehiculos si cumple con la condición especificada".
         print(
             f"Se han encontrado {len(filtrar_vehiculos)} vehículos con {ruedas} ruedas:"
         )
-        print("========================================================================================")
+        print(
+            "========================================================================================"
+        )
         for vehiculo in filtrar_vehiculos:
-            print(f"Clase: {type(vehiculo).__name__}")
+            print(
+                f"Clase: {type(vehiculo).__name__}"
+            )
             vehiculo.mostrar_informacion()
             print("\n")
     else:
         print("Catálogo de vehículos:")
         for vehiculo in vehiculos:
-            print(f"Clase: {type(vehiculo).__name__}")
+            print(
+                f"Clase: {type(vehiculo).__name__}"
+            )  # devuelve el nombre de la clase del objeto vehiculo. Por ejemplo, si vehiculo es una instancia de la clase Auto, entonces type(vehiculo).__name__ sería igual a "Auto".
             vehiculo.mostrar_informacion()
             print("\n")
 
@@ -112,4 +136,3 @@ def catalogar(vehiculos, ruedas=0):
 catalogar(vehiculos)
 catalogar(vehiculos, ruedas=2)
 catalogar(vehiculos, ruedas=4)
-
