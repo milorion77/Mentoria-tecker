@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Repetidor de Frases</title>
+</head>
+<body>
+    <h1>Repetidor de Frases</h1>
+    <p>Escribe una palabra o frase y presiona el botón para repetirla. Escribe "salir" para finalizar.</p>
+
+    <input type="text" id="inputText">
+    <button onclick="repetirFrase()">Repetir</button>
+
+    <p id="fraseRepetida"></p>
+
+
+
+
+    <h1>Calcular Fecha de Nacimiento</h1>
+    <p>Ingresa la edad para calcular la fecha de nacimiento:</p>
+
+    <input type="number" id="inputEdad">
+    <button onclick="calcularFechaNacimiento()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function repetirFrase() {
+            const input = document.getElementById("inputText");
+            const fraseRepetida = document.getElementById("fraseRepetida");
+
+            const entrada = input.value;
+            
+            if (entrada.toLowerCase() === "salir") {
+                fraseRepetida.textContent = "¡Hasta luego!";
+                input.disabled = true;
+            } else {
+                fraseRepetida.textContent = entrada;
+                input.value = "";
+            }
+        }
+
+        function calcularFechaNacimiento() {
+            const inputEdad = document.getElementById("inputEdad");
+            const resultado = document.getElementById("resultado");
+
+            const edad = parseInt(inputEdad.value);
+
+            if (isNaN(edad) || edad <= 0) {
+                resultado.textContent = "Por favor, ingresa una edad válida.";
+                return;
+            }
+
+            const fechaActual = new Date();
+            const añoNacimiento = fechaActual.getFullYear() - edad;
+            const mesNacimiento = fechaActual.getMonth() + 1; // Los meses en JavaScript van de 0 a 11
+            const diaNacimiento = fechaActual.getDate();
+
+            resultado.textContent = `La persona nació aproximadamente el ${diaNacimiento}/${mesNacimiento}/${añoNacimiento}.`;
+        }
+    </script>
+</body>
+</html>
